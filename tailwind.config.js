@@ -1,6 +1,5 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
-  darkMode: false,
   theme: {
     colors: {
       primary: "#9326A6",
