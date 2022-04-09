@@ -4,6 +4,7 @@ module.exports = {
     colors: {
       primary: "#9326A6",
       secondary: "#3adede",
+      white: "#fff",
     },
     screens: {
       xs: "0px",
