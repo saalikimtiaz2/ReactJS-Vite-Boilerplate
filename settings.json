@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[react]": {
+    "editor.defaultFormater": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormater": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormater": "esbenp.prettier-vscode"
+  }
+}
