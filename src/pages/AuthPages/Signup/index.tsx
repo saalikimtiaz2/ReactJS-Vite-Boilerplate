@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { signupUser } from 'src/redux/reducers/authSlice'
 
 type SignupCredentials = {
   name: string
@@ -15,6 +17,15 @@ const Signup = () => {
     email: '',
     password: '',
   })
+
+  const dispatch = useDispatch()
+
+  const handleUserSignup = () => {
+    if (credentials.email !== '' && credentials.password !== '' && credentials.name !== '') {
+      dispatch(signupUser({ name: credentials.email, email: credentials.email }))
+      navigate('/profile')
+    }
+  }
 
   return (
     <div className='flex h-screen items-center justify-center bg-gradient-to-b from-blue-500 to-purple-500'>
@@ -75,6 +86,10 @@ const Signup = () => {
           <div>
             <button
               type='submit'
+              onClick={evt => {
+                evt.preventDefault()
+                handleUserSignup()
+              }}
               className='focus:shadow-outline w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none'
             >
               Sign Up
