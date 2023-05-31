@@ -1,16 +1,15 @@
-// import { AuthContext } from 'context/AuthContext'
-// import { useContext } from 'react'
-// import { Navigate, Outlet } from 'react-router-dom'
-import { Outlet } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { Navigate, Outlet } from 'react-router-dom'
+import { RootState } from 'src/redux/store'
 
 export { PrivateRoute }
 
 function PrivateRoute() {
-  // const { isAuthenticated } = useContext(AuthContext)
+  const { isAuth } = useSelector((state: RootState) => state.authSlice)
 
-  // if (!isAuthenticated) {
-  //   return <Navigate to='/login' replace />
-  // }
+  if (!isAuth) {
+    return <Navigate to='/login' replace />
+  }
   return <Outlet />
 }
 export default PrivateRoute
